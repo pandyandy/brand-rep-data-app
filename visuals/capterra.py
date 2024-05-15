@@ -184,10 +184,15 @@ def capterra(capterra_data, capterra_keywords):
         colormap = mcolors.ListedColormap(['#3CA0FF', '#BDBDBD', '#000000', '#FFCC02', '#1C3661', '#071729'])
         #title_text = 'Keyword Frequency'
         #st.markdown(f'**{title_text}**', unsafe_allow_html=True)
+        
         path = os.path.dirname(os.path.abspath(__file__))
-        mask = np.array(Image.open(path + "/static/keboola_wc.png"))
-        font = path + "/static/Roboto-Bold.ttf"
-
+        app_path = os.path.dirname(path)
+        mask_path = os.path.join(app_path, 'static', 'keboola_wc.png')
+        font_path = os.path.join(app_path, 'static', 'Roboto-Bold.ttf')
+        
+        mask = np.array(Image.open(mask_path))
+        font = font_path
+        
         wordcloud = WordCloud(width=500, height=500, background_color=None, font_path=font, mask=mask, mode='RGBA', colormap=colormap).generate_from_frequencies(word_freq)
         wordcloud_array = wordcloud.to_array()
 
