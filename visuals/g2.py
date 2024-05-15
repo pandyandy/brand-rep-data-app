@@ -91,14 +91,13 @@ def g2(g2_data, g2_keywords):
         st.plotly_chart(fig, use_container_width=True)
 
     with col2: 
-    #positive_keywords = keywords_filtered[keywords_filtered['sentiment_score'] > 0]
-        positive_keywords = keywords_filtered[(keywords_filtered['sentiment_score'] > 0) & (keywords_filtered['KEYWORD'] != 'Keboola')]
-        keyword_counts = positive_keywords.groupby('KEYWORD')['KEYWORD_COUNT'].sum().reset_index()
+        #positive_keywords = keywords_filtered[(keywords_filtered['sentiment_score'] > 0) & (keywords_filtered['KEYWORD'] != 'Keboola')]
+        keyword_counts = keywords_filtered.groupby('KEYWORD')['KEYWORD_COUNT'].sum().reset_index()
         # Sort by count in descending order and select top 10 keywords
         top_keywords = keyword_counts.sort_values(by='KEYWORD_COUNT', ascending=True).tail(10)
 
         # Create a horizontal bar chart using Plotly
-        fig = px.bar(top_keywords, x='KEYWORD_COUNT', y='KEYWORD', orientation='h', title='Top 10 Positive Keywords by Count', color_discrete_sequence=['#FFCC02'])
+        fig = px.bar(top_keywords, x='KEYWORD_COUNT', y='KEYWORD', orientation='h', title='Top 10 Keywords by Count', color_discrete_sequence=['#FFCC02'])
         fig.update_layout(xaxis_title='Count', yaxis_title='Keyword')
 
         st.plotly_chart(fig, use_container_width=True)
