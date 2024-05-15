@@ -1,0 +1,28 @@
+/* Importing Roboto font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&display=swap');
+
+/* Global font change */
+html, [class*="st-"] {
+    font-family: 'Roboto', sans-serif; 
+}
+/* Customize the appearance of the slider track */
+.stSlider > .st-dc {
+    background-color: #ccc;
+    border-radius: 5px;
+    height: 10px;
+}
+
+/* Customize the appearance of the slider thumb */
+.stSlider > .st-dc .st-cg {
+    background-color: #007bff;
+    border-radius: 50%;
+    width: 20px !important;
+    height: 20px !important;
+    margin-top: -5px !important;
+    margin-left: -5px !important;
+}
+
+/* Customize the appearance of the slider value */
+.stSlider > .st-dc .st-bp {
+    color: #007bff;
+}
