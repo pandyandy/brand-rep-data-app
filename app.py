@@ -8,11 +8,11 @@ from visuals.capterra import capterra
 
 st.set_page_config(layout='wide')
 
-with open('static/style.css') as f:
+path = os.path.dirname(os.path.abspath(__file__))
+with open(path + '/static/style.css') as f:
     st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
 
 # Logo and Title
-path = os.path.dirname(os.path.abspath(__file__))
 keboola_logo = path + '/static/logo.png'
 logo_html = f'''
 <div style="display: flex; align-items: center; justify-content: left; font-size: 45px; font-weight: 600;">
