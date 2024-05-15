@@ -63,6 +63,9 @@ def g2(g2_data, g2_keywords):
     unique_sentiment_scores = filtered_data['sentiment_score'].unique()
     keywords_filtered = keywords[keywords['sentiment_score'].isin(unique_sentiment_scores)]
 
+    values_to_exclude = ['keboola', 'Keboola']
+    keywords_filtered = keywords_filtered[~keywords_filtered['KEYWORD'].isin(values_to_exclude)]
+
     col1, col2, col3 = st.columns([3,2,3], gap='medium')
     with col1:
     #    colors = {
