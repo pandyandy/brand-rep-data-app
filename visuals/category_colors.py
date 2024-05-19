@@ -53,7 +53,7 @@ def generate_wordcloud(word_freq):
 
 openai.api_key = st.secrets["OPENAI_API_KEY"]
 
-@st.experimental_dialog("Proposed content strategy", width="large")
+@st.experimental_dialog("Content Strategy", width="large")
 def ai_content(content):
 
     result_string = '\n\n'.join(content.astype(str))
