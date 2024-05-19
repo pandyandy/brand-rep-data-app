@@ -19,7 +19,7 @@ with open(path + '/static/style.css') as f:
 keboola_logo = path + '/static/logo.png'
 logo_html = f'''
 <div style="display: flex; align-items: center; justify-content: left; font-size: 45px; font-weight: 600;">
-    <img src="data:image/png;base64,{base64.b64encode(open(keboola_logo, "rb").read()).decode()}" style="height: 55px;">
+    <img src="data:image/png;base64,{base64.b64encode(open(keboola_logo, "rb").read()).decode()}" style="height: 50px;">
     <span style="margin: 0 20px;">Brand Reputation Management</span>
 </div>
 '''
