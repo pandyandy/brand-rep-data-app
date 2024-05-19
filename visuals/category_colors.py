@@ -65,6 +65,7 @@ def ai_content(content):
         st.session_state['response'] = generate(prompt)
     if 'response' in st.session_state:
         st.write(st.session_state['response'])
+        st.download_button("Download", st.session_state['response'], use_container_width=True)
 
 def generate(prompt):
     client = OpenAI()
