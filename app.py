@@ -1,10 +1,13 @@
 import streamlit as st
+import pandas as pd
 import base64
 import os 
+import openai
 
 from visuals.g2 import g2
 from visuals.reddit import  reddit
 from visuals.capterra import capterra
+from visuals.category_colors import categorize_sentiment
 
 st.set_page_config(layout='wide')
 
