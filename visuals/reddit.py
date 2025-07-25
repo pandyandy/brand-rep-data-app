@@ -8,8 +8,8 @@ from visuals.category_colors import color_for_value, categorize_sentiment, senti
     
 def reddit(reddit_data, reddit_keywords):
 
-    data = pd.read_csv(reddit_data)
-    keywords = pd.read_csv(reddit_keywords)
+    data = reddit_data
+    keywords = reddit_keywords
 
     data['sentiment_category'] = data['sentiment_score'].apply(categorize_sentiment)
     data = data.drop_duplicates(subset='body', keep='first')
