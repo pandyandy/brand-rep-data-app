@@ -7,8 +7,8 @@ from visuals.category_colors import color_for_value, categorize_sentiment, senti
 
 def g2(g2_data, g2_keywords):
 
-    data = pd.read_csv(g2_data)
-    keywords = pd.read_csv(g2_keywords)
+    data = g2_data
+    keywords = g2_keywords
 
     data['sentiment_category'] = data['sentiment_score'].apply(categorize_sentiment)
     data['date_published'] = pd.to_datetime(data['date_published'], utc=True)  
