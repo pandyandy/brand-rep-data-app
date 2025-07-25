@@ -8,8 +8,8 @@ from visuals.category_colors import color_for_value, categorize_sentiment, senti
     
 def capterra(capterra_data, capterra_keywords):
 
-    data = pd.read_csv(capterra_data)
-    keywords = pd.read_csv(capterra_keywords)
+    data = capterra_data
+    keywords = capterra_keywords
 
     data['sentiment_category'] = data['sentiment_score'].apply(categorize_sentiment)
     data['writtenOn'] = pd.to_datetime(data['writtenOn'], utc=True)  
