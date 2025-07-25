@@ -29,14 +29,14 @@ st.markdown(f"{logo_html}", unsafe_allow_html=True)
 st.caption("<br>See how users rate Keboola on various platforms & social media.<br>", unsafe_allow_html=True)
 
 # Data
-g2_data = pd.read_csv('/data/in/tables/g2_sentiment_final.csv')
-g2_keywords = pd.read_csv('/data/in/tables/g2_keywords_final.csv')
+g2_data = pd.read_csv(st.secrets['g2_sentiment'])
+g2_keywords = pd.read_csv(st.secrets['g2_keywords'])
 
-reddit_data = pd.read_csv('/data/in/tables/reddit_sentiment_final.csv')
-reddit_keywords = pd.read_csv('/data/in/tables/reddit_keywords_final.csv')
+reddit_data = pd.read_csv(st.secrets['reddit_sentiment'])
+reddit_keywords = pd.read_csv(st.secrets['reddit_keywords'])
 
-capterra_data = pd.read_csv('/data/in/tables/capterra_sentiment_final.csv')
-capterra_keywords = pd.read_csv('/data/in/tables/capterra_keywords_final.csv')
+capterra_data = pd.read_csv(st.secrets['capterra_sentiment'])
+capterra_keywords = pd.read_csv(st.secrets['capterra_keywords'])
 
 
 tab1, tab2, tab3 = st.tabs(["G2", "Capterra", "Reddit"])
